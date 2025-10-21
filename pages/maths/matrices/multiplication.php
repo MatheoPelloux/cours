@@ -6,8 +6,8 @@ session_start();
 # Fonction qui calcule le résultat de la matrice 2x2 et retourne une variable qui contient le résultat.
 function mactrice2x2($matriceA, $matriceB) {
     $resultat = [
-        $matriceA[0][0] + $matriceB[0][0], $matriceA[0][1] + $matriceB[0][1],
-        $matriceA[1][0] + $matriceB[1][0], $matriceA[1][1] + $matriceB[1][1]
+        $matriceA[0][0] * $matriceB[0][0] + $matriceA[0][1] * $matriceB[1][0], $matriceA[0][0] * $matriceB[0][1] + $matriceA[0][1] * $matriceB[1][1],
+        $matriceA[1][0] * $matriceB[0][0] + $matriceA[1][1] * $matriceB[1][0], $matriceA[1][0] * $matriceB[0][1] + $matriceA[1][1] * $matriceB[1][1]
     ];
     return $resultat;
 }
@@ -44,7 +44,7 @@ if (isset($_POST['nouvel_exo'])) {
 
 # Initialisation des variables minimum et maximum des nombre aléatoire.
 $min = 1;
-$max = 20;
+$max = 5;
 
 # Vérifie si dans la variable $_SESSION "matriceA" et "matriceB" n'existent pas, si elles n'existent pas, les crée sinon ne rien faire.
 if (!isset($_SESSION['matriceA']) || !isset($_SESSION['matriceB'])) {
